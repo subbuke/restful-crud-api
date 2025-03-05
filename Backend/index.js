@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const products = require("./routes/Products");
 
 const app = express();
 require('dotenv').config();
@@ -11,6 +12,8 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send("hello world")
 })
+
+app.use("/products", products);
  
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
