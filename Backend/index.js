@@ -4,6 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const products = require("./routes/Products");
 
+
+
 const app = express();
 require('dotenv').config();
 app.use(bodyParser.json());
@@ -18,6 +20,7 @@ app.use("/products", products);
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log("database connected successfully")
+    
 }).catch(err => console.log(err))
 
 
