@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send("hello world")
+    res.send("welcome for api add products to route")
 })
 
 app.use("/products", products);
